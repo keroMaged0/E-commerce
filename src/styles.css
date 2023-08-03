@@ -1,0 +1,207 @@
+/* You can add global styles to this file, and also import other style files */
+:root {
+    --main-coler: #246c5e;
+    --main-colers: #43C6AC ;
+    --sacound-coler: #24214b;
+    --black-color: #000000;
+    --white-color: #ffff;
+    --light-color: #f7f7f7;
+    --star-color: gold;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.mainColor {
+    color: var(--main-coler) !important;
+}
+.mainColors {
+    color: var(--main-colers) !important;
+}
+.sacoundColor {
+    color: var(--sacound-coler) !important;
+}
+
+.darkColor {
+    color: var(--black-color);
+}
+.bgLight
+{
+    background-color: var(--light-color) !important ;
+   
+}
+.bgdark
+{
+    background-color: var(--main-coler) !important ;
+   
+}
+.remove
+{
+   background-color: white;
+   color: rgb(186, 22, 22) !important;
+   transition:  1s !important;
+   font-weight: bold;
+}
+.remove:hover
+{
+    color: white !important ;
+    background-color: red;
+    background: -webkit-linear-gradient(to end,rgb(247, 64, 64), rgb(69, 4, 4)) !important;
+    background: linear-gradient(to bottom,rgb(255, 83, 83), rgb(79, 7, 7)) !important;
+}
+
+.bgGradient {
+
+    background: #43C6AC !important;
+    background: -webkit-linear-gradient(to left, #24214b, #44cfb3) !important;
+    background: linear-gradient(to right, #2c295b, #43C6AC) !important;
+
+}
+
+
+.whiteColor {
+    color: var(--white-color) !important;
+}
+
+.btnForm {
+    background-color: var(--sacound-coler) !important;
+    color: var(--white-color) !important ;
+}
+.bgWhite {
+    background-color: var(--white-color) !important;
+}
+
+.rate {
+    color: var(--star-color) !important;
+}
+.shadow
+{
+    box-shadow:3px 4px 10px var(--main  -coler) !important;
+
+}
+
+
+
+.bgc
+{
+    padding: 1px;
+    background-color:var(--main-coler);
+    border:50%;
+    border-radius: 1px solid var(--black-color) ;
+}
+
+.btnbor
+{
+    color:var(--main-colers) !important;
+    border-color:var(--main-colers) !important;
+}
+
+.btnbord
+{
+    border-color:var(--main-coler);
+}
+
+.prodect:hover 
+{
+    border-radius: 20px;
+    /* border: 0.2px solid var(--main-coler); */
+    box-shadow:1px 1px 10px var(--main-coler);
+}
+.disc
+{
+    color: var(--black-color);
+}
+.disc:hover
+{
+    color: var(--main-coler);
+}
+.curser
+{
+    cursor: pointer;
+}
+.btndeteals
+{
+   
+    width: 35%;
+    text-align: center;
+   
+    color: var(--white-color) !important;
+    background: #43C6AC !important;
+    background: -webkit-linear-gradient(to left, #24214b, #44cfb3) !important;
+    background: linear-gradient(to right, #2c295b, #43C6AC) !important;
+    border: none;
+    box-shadow: 2px 2px 8px var(--main-coler);
+    transition:  1s !important;
+}
+.btndeteals:hover
+{
+   
+    width: 100%;
+    text-align: center;
+    margin: auto;
+    color: var(--main-coler);
+    background: #2c295b !important;
+    background: -webkit-linear-gradient(to left, #44cfb3, #2c295b) !important;
+    background: linear-gradient(to right, #44cfb3, #2c295b) !important;
+    border: none;
+    box-shadow: 2px 2px 8px var(--main-coler);
+}
+.bot .buton
+{
+
+    transition: transform 1s ,opacity 1s;
+    opacity: 0;
+    transform: translateX(100%);
+    color: var(--white-color);
+    background: #43C6AC !important;
+    background: -webkit-linear-gradient(to left, #24214b, #44cfb3) !important;
+    background: linear-gradient(to right, #2c295b, #43C6AC) !important;
+    border: none;
+    box-shadow: 2px 2px 8px var(--main-coler);
+}
+.bot .buton:hover
+{
+
+    transition: transform 1s ,opacity 1s;
+    opacity: 0;
+    transform: translateX(100%);
+    color: var(--white-color);
+    background: #2c295b !important;
+    background: -webkit-linear-gradient(to left, #44cfb3, #2c295b) !important;
+    background: linear-gradient(to right, #44cfb3, #2c295b) !important;
+    border: none;
+    box-shadow: 2px 2px 8px var(--main-coler);
+}
+.prodect:hover .buton
+{
+    
+
+    opacity: 1;
+    transform: translateX(0%);
+}
+.sho .shop
+{
+
+    transition: transform 1s ,opacity 1s;
+    opacity: 0;
+    transform: translateX(100%);
+    color: var(--black-color);
+    
+}
+.prodect:hover .shop
+{
+    
+    color:var(--main-coler);
+
+    opacity: 1;
+    transform: translateX(0%);
+}
+
+

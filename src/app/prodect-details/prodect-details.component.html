@@ -1,0 +1,57 @@
+<div class="container  pb-5">
+    <div class="row position:absolute my-3">
+        <div class="d-flex justify-content-end mb-5 mt-5">
+            <i class="fa-solid fa-circle-xmark curser fa-lg disc " (click)="close()"></i>
+        </div>
+        
+        
+        <div class="col-md-1">
+            <img *ngFor="let imgs of protectedDeatails.images " (click)="changeSrc(imgs)" class="borderPro rounded-3 curser w-100" [src]="imgs" >
+        </div>
+        <div class="col-md-4  position-relative">
+            
+     
+                <!-- <img class=" hoverImg rounded-3" imageZoom="zoomedImageSrc" [src]="mainSrc?mainSrc:protectedDeatails.imageCover" alt=""> -->
+                <div class="image-container" (mousemove)="onMouseMove($event)" (mouseleave)="onMouseLeave()">
+                    <img [src]="mainSrc?mainSrc:protectedDeatails.imageCover" class="imgs" alt="Sample Image" [style.transform]="imageTransform">
+                  </div>
+
+        </div>
+
+        
+        
+        <div class="col-md-7 col-sm-12 m-auto  ">
+            <div class="mx-5 ">
+                <h3>{{protectedDeatails.title}}</h3>
+                <p class="text-muted">{{protectedDeatails.description}}</p>
+                <div class="d-flex px-2 justify-content-between align-items-center">
+                    <span class="text-muted">{{protectedDeatails.price}} EGP</span>
+                    <span class="d-flex align-items-center justify-content-end">
+                        <i class="fa rate fa-star fa-star-o"> </i>
+                        <h6 class="pt-2 ps-1">{{protectedDeatails.ratingsAverage}}</h6>
+                    </span>
+
+
+
+                    
+
+                </div>
+                <div class="bot">
+                    <button (click)="addToCart(protectedDeatails._id)"   class="btn m-auto  my-2 btndeteals fw-bold">+ add</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row g-3  ms-2">
+        
+        <div *ngFor="let prodect  of mutProudect " class="col-md-3">
+            <div class="img d-flex justify-content-between">
+                <img src="assets/slide20.jpg" class="w-100 rounded-3" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>
+
+

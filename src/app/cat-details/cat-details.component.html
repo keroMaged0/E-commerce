@@ -1,0 +1,16 @@
+<section class="py-5">
+    <div class="container my-5">
+        <div class="row g-4">
+            <div *ngFor="let prodect of CatagoryDetails" class=" col-md-3 d-flex  justify-content-center ">
+            <div class="position-relative img overflow-hidden">
+                <img class="rounded-5" width="250"  height="250" src="assets/catDeatiels.webp" alt="">
+                <div class=" anmaitcat rounded-5">
+                    <h3 class="h5 mainColors  disc text-center fw-bold">{{prodect.name}}</h3>
+                </div>  
+            </div>
+        </div>
+        </div>
+    </div>
+</section>
+
+<app-footer></app-footer>

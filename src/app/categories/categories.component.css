@@ -1,0 +1,25 @@
+.anmaitcat
+{
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    top: 0%;
+    bottom: 0%;
+    left: 0px;
+    right: 0px;
+    opacity: 0;
+    background-color:rgba(0, 0, 0, 0.8);
+    transition:  1s ;
+    transform: translatey(30%);
+   
+
+}
+.anmaitcat:hover 
+{
+    transform: translatey(0%);
+
+   opacity: 1;
+}

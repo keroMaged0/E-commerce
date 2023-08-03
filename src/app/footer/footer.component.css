@@ -1,0 +1,19 @@
+.btnFotter{
+    width: fit-content;
+    background: #43C6AC !important;
+    background: -webkit-linear-gradient(to left, #24214b, #44cfb3) !important;
+    background: linear-gradient(to right, #2c295b, #43C6AC) !important;
+    color: white;
+    box-shadow: 2px 2px 8px #43C6AC;
+    transition: 0.7s;
+    font-weight: bold;
+}
+.btnFotter:hover{
+    width: fit-content;
+    background: #2c295b !important;
+    background: -webkit-linear-gradient(to left, #44cfb3, #2c295b) !important;
+    background: linear-gradient(to right, #44cfb3, #2c295b) !important;
+    color: #ffffff;
+    
+    box-shadow: 2px 2px 8px #43C6AC;
+}

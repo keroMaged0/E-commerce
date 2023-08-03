@@ -1,0 +1,43 @@
+
+<app-main-slider  ></app-main-slider>
+
+<div class="container">
+    <div class="col-md-8 m-auto  position-relative d-flex justify-content-center align-items-center">
+        <input [(ngModel)]="x" class="form-control "  placeholder="Search By Product ...." type="text" >
+        <i class="fa-solid search bgGradient text-white fa-magnifying-glass">
+        
+        </i>
+         </div>
+    <div class="row   m-auto mt-2 overflow-hidden">
+        
+        <div *ngFor="let prodect of prodects|search:x" class=" col-md-2 col-sm-4">
+            <div class="px-3 py-2 my-3 prodect">
+                <button (click)="addWishList(prodect.id)" class="btn border-0 sho">
+                    <i class="curser  fa-heart shop" [class]="isWishList?'fa-solid':'fa-regular'"></i>
+                </button>
+                <a [routerLink]="['/prodectDetails',prodect._id]" class="text-muted text-decoration-none" >
+                    <img class="w-100 " src="{{prodect.imageCover}}" alt="">
+                    <h3 class="h5 disc text-center fw-bold">{{prodect.brand.name}}</h3>
+                    <h2 class="h6  my-3 text-center text-secondary">{{prodect.title.split(' ').slice(0,2).join()}}</h2>
+                    <div class="d-flex px-2 justify-content-between align-items-center">
+                        <span class="text-muted">{{prodect.price}} EGP</span>
+                        <span class="d-flex align-items-center justify-content-end">
+                            <i class="fa rate fa-star fa-star-o"> </i>
+                            <h6 class="pt-2 ps-1">{{prodect.ratingsAverage}}</h6>   
+                        </span>   
+                    </div>
+                    <div class="bot">
+                    </div>
+                </a> 
+                <div (click)="addToCart(prodect._id)" class="bot">
+                    <button  class="btn w-100 my-2  buton fw-bold" >+ add</button>
+                </div>
+
+            </div>
+        </div>
+      
+    </div>
+</div>
+   
+
+<app-footer></app-footer>

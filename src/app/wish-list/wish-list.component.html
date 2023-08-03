@@ -1,0 +1,47 @@
+<div  *ngIf="wishListData.length > 0 ; else wishLists" class="container py-5 pb-2">
+    <div class="row   m-auto  overflow-hidden">
+        <div *ngFor="let prodect of wishListData" class=" col-md-2 col-sm-4">
+            <div class="px-3 py-2 my-3 prodect">
+
+                
+                <button  class="btn border-0 sho" (click)="remove(prodect._id)">
+                    <i class="curser fa-solid  fa-trash-can text-danger shop"  ></i>
+                </button>
+                <a [routerLink]="['/prodectDetails',prodect._id]" class="text-muted text-decoration-none" >
+                    <img class="w-100 " src="{{prodect.imageCover}}" alt="">
+                    <h3 class="h5 disc text-center fw-bold">{{prodect.brand.name}}</h3>
+                    <h2 class="h6  my-3 text-center text-secondary">{{prodect.title.split(' ').slice(0,2).join()}}</h2>
+                    <div class="d-flex px-2 justify-content-between align-items-center">
+                        <span class="text-muted">{{prodect.price}} EGP</span>
+                        <span class="d-flex align-items-center justify-content-end">
+                            <i class="fa rate fa-star fa-star-o"> </i>
+                            <h6 class="pt-2 ps-1">{{prodect.ratingsAverage}}</h6> 
+                              
+                        </span> 
+                    </div>
+                    <div class="bot">
+                    </div>
+                </a> 
+                <div class="bot">
+                    <button (click)="addToCart(prodect._id)" class="btn w-100 my-2  buton fw-bold" >+ add</button>
+                </div>               
+            </div>
+        </div>
+    </div>
+
+ 
+</div>
+<ng-template #wishLists>
+    <div class=" ">
+
+        <div class="position-relative ">
+            <img height="700vh" width="100%" src="assets/notData.jpg" alt="">
+        </div>
+        <div>
+            <h1 class="my-5 text-white d-flex justify-content-center top-0 bottom-0 start-0 end-0 align-items-center position-absolute p-5"> not prodect found</h1>
+        </div>
+    </div>
+
+
+</ng-template>
+<app-footer></app-footer>

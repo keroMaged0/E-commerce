@@ -1,0 +1,59 @@
+<section class="register my-5">
+    <div [ngStyle]="{'background-image': 'url(\'assets/bgshobe.jpg\')'}"   class="bgi  px-3 overflow-hidden w-100 vh-100 pt-5">
+
+        <div class="bgi col-md-8 col-sm-12 m-auto mt-5 rounded-5  bgLight    text-white">
+            <div class="w-75 m-auto  py-5">
+             <h4 class="mb-4 fw-bold sacoundColor m-auto text-center ">Register Now
+            </h4>
+            <div *ngIf="responseError" class="alert alert-danger text-center ">
+                {{responseError}}
+            </div>
+            <form class="" (ngSubmit)="handelRegister(registerForm)"  [formGroup]="registerForm">
+                <input type="text" placeholder="name" class="form-control rounded-4 mb-2 p-3"
+                 formControlName="name" id="">
+                 <div *ngIf="registerForm.get('name')?.errors && registerForm.get('name')?.touched" class="alert alert-danger mt-0">
+                    <p *ngIf="registerForm.get('name')?.getError('minlength')" class="m-0">Name MinLength Is 3</p>
+                    <p *ngIf="registerForm.get('name')?.getError('maxlength')" class="m-0">Name MaxLength Is 10</p>
+                    <p *ngIf="registerForm.get('name')?.getError('required')" class="m-0">Name Is Required</p>
+                 </div>
+    
+    
+                <input type="email" placeholder="email" class="form-control rounded-4 mb-2 p-3" 
+                formControlName="email" id="">
+                <div *ngIf="registerForm.get('email')?.errors && registerForm.get('email')?.touched" class="alert alert-danger mt-0">
+                    <p *ngIf="registerForm.get('email')?.getError('email')" class="m-0">Email Is Not Valid</p>
+                    <p *ngIf="registerForm.get('email')?.getError('required')" class="m-0">email Is Required</p>
+                 </div>
+    
+                <input type="password" placeholder="password" class="form-control rounded-4 mb-2 p-3"
+                 formControlName="password" id="">
+                 <div *ngIf="registerForm.get('password')?.errors && registerForm.get('password')?.touched" class="alert alert-danger mt-0">
+                    <p *ngIf="registerForm.get('password')?.getError('pattern')" class="m-0">password Is Not Valid</p>
+                    <p *ngIf="registerForm.get('password')?.getError('required')" class="m-0">password Is Required</p>
+                 </div>
+                 
+                <input type="password" placeholder="rePassword" class="form-control rounded-4 mb-2 p-3" 
+                formControlName="rePassword"
+                    id="">
+                    <div *ngIf="registerForm.get('rePassword')?.errors && registerForm.get('rePassword')?.touched" class="alert alert-danger mt-0">
+                        <p *ngIf="registerForm.get('rePassword')?.getError('pattern')" class="m-0">rePassword Is Not Valid</p>
+                        <p *ngIf="registerForm.get('rePassword')?.getError('passwordMatch')" class="m-0">rePassword not match </p>
+                        <p *ngIf="registerForm.get('rePassword')?.getError('required')" class="m-0">rePassword Is Required</p>
+                     </div>
+                <input type="tel" placeholder="phone" class="form-control rounded-4 mb-2 p-3" 
+                formControlName="phone" id="">
+                <div *ngIf="registerForm.get('phone')?.errors && registerForm.get('phone')?.touched" class="alert alert-danger mt-0">
+                    <p *ngIf="registerForm.get('phone')?.getError('pattern')" class="m-0">phone Is Not Valid</p>
+                    <p *ngIf="registerForm.get('phone')?.getError('required')" class="m-0">phone Is Required</p>
+                 </div>
+                <button [disabled]="registerForm.invalid" type="submit" class="btn bgGradient text-white rounded-4 fw-bold mt-3 px-3 py-2 d-block ms-auto ">
+                  <span *ngIf="isLoding == false" > Submit</span>  
+                  <span *ngIf="isLoding == true"><i class="fas fa-spinner  fa-spin"></i></span> 
+                </button>
+         
+                
+            </form>
+            </div>
+         </div>
+    </div>
+</section>

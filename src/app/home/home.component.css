@@ -1,0 +1,29 @@
+:root{
+    --main-coler: #246c5e;
+    --black-color:  #000000;
+    --white-color: #ffff;
+    --star-color:gold;
+}
+input{
+    margin: 20px 0px;
+    padding : 10px !important;
+    font-size: 1em;
+    border-radius: 25px;
+    box-shadow: 2px 2px 10px #246c5e;
+}
+.search{
+    background-color: #246c5e;
+    padding: 15px;
+    border-radius: 50px;
+    position: absolute;
+    top: 20px;
+    bottom: 20px;
+    right: 0px;
+}
+input::placeholder
+{
+    color: #a9a8a8 !important;
+}
+
+
+

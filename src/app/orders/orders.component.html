@@ -1,0 +1,62 @@
+<section *ngIf="order.length > 0 ; else orders" class="pt-5">
+
+
+    <div>
+        <div class=" bg-light shadow rounded-3 col-md-11 m-auto  py-5 mb-5 " *ngFor="let myOrder of order; let i=index">
+
+
+            <div class="d-flex justify-content-around">
+                <div class="d-flex align-items-center ms-5">
+                    <img width="8%" class="" src="assets/orderDelivery.png" alt="">
+                    <h4 class="fw-bold mainColor ">ORDER {{i+1}}</h4>
+
+                </div>
+                <h4 class="mainColor fw-bold d-flex justify-content-end  me-3">Total Price : {{ myOrder?.totalOrderPrice
+                    }}
+                    EG</h4>
+
+            </div>
+
+            <div *ngFor="let item of myOrder?.cartItems"
+                class=" row d-flex justify-content-between m-auto align-items-center border-bottom">
+                <div class="col-md-1 ">
+                    <img width="100" class="my-3 rounded-circle" [src]="item?.product.imageCover" alt="">
+                </div>
+                <div class="col-md-11 ">
+
+                    <h4 class="mb-34">{{item.product.title}}</h4>
+                    <h4 class="mainColor">Price : {{item.price}} EG</h4>
+
+
+
+                </div>
+
+
+
+
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+
+
+</section>
+<ng-template #orders>
+    <div class=" ">
+
+        <div class="position-relative ">
+            <img height="700vh" width="100%" src="assets/notData.jpg" alt="">
+        </div>
+        <div>
+            <h1 class="my-5 text-white d-flex justify-content-center top-0 bottom-0 start-0 end-0 align-items-center position-absolute p-5"> not order found</h1>
+        </div>
+    </div>
+
+
+</ng-template>
+
+<app-footer></app-footer>

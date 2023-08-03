@@ -1,0 +1,20 @@
+<section class="py-5">
+    <div class="container  pb-5 my-5">
+        <div class="row mx-5 g-4">
+            <div *ngFor="let prodect of prodectBrands" class=" col-md-3 d-flex  justify-content-center ">
+                <a [routerLink]="['/prandDetails',prodect._id]" class="text-muted    text-decoration-none" >
+                  
+                    <div class="position-relative  img overflow-hidden">
+                        <img class="rounded-4" width="250" height="250" src="{{prodect.image}}" alt="">
+                        <div class=" anmaitcat rounded-4">
+                            <h3 class="h5 mainColors  disc text-center fw-bold">{{prodect.name}}</h3>
+                        </div>  
+                    </div>
+                                   
+                </a> 
+            </div>
+        </div>
+    </div>
+</section>
+
+<app-footer></app-footer>

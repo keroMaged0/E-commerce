@@ -1,0 +1,77 @@
+<section *ngIf="getLoggedUser?.products.length > 0 ; else cartProduct" class="py-5">
+    <div class="rounded-3 bg-light col-md-11 m-auto p-4  ">
+        <div class="d-flex justify-content-between">
+            <h3 class="fw-bold mainColor">Shop Cart</h3>
+            <h4 class="mainColor fw-bold d-flex justify-content-end  me-3">Total Price : {{ getLoggedUser?.totalCartPrice}}
+                EG</h4>
+    
+        </div>
+        <div class="d-flex justify-content-center">
+    
+            <div  class="bot d-flex w-50 align-items-end mb-3">
+                    <a class="btn text-decoration-none  btndeteals fw-bold mb-5 w-auto  m-auto" [routerLink]="['/ceakOut',getLoggedUser?._id]">
+                        online Bayment
+                    </a>
+                    
+    
+                    
+            </div>
+    
+    
+        </div>
+        <div *ngFor="let getLogged of getLoggedUser?.products"
+            class=" row d-flex justify-content-between m-auto align-items-center border-bottom">
+            <div class="col-md-1 ">
+                <img width="100" class="my-3 rounded-circle" [src]="getLogged?.product.imageCover" alt="">
+            </div>
+            <div class="col-md-11 ">
+    
+                <h4 class="mb-3 mainColor">{{getLogged.product.title}}</h4>
+                <h4 class="mainColor">Price : {{getLogged.price}} EG</h4>
+                <div class="d-flex justify-content-between align-items-center">
+                    <button (click)="removeSpecificCart(getLogged.product._id)"
+                       class="btn  remove  my-2">
+                        <i class="fa-regular btnbord  fa-trash-can "> </i>
+                        Remove
+                    </button>
+                    <div class="  d-flex justify-content-end align-items-center ">
+    
+                        <button (click)="updateCartProduct(getLogged.product._id,getLogged.count+1)"
+                            class="btn  text-white fw-bold bgcount ">+</button>
+                        <span class="px-2 mainColor"> {{getLogged.count}} </span>
+                        <button (click)="updateCartProduct(getLogged.product._id,getLogged.count+(-1))"
+                            class="btn   text-white fw-bold bgcount ">-</button>
+    
+    
+                    </div>
+                </div>
+    
+    
+    
+            </div>
+    
+    
+    
+    
+        </div>
+    
+    
+    </div>
+</section>
+<ng-template #cartProduct>
+    <div class=" ">
+
+        <div class="position-relative ">
+            <img height="700vh" width="100%" src="assets/notData.jpg" alt="">
+        </div>
+        <div>
+            <h1 class="my-5 text-white d-flex justify-content-center top-0 bottom-0 start-0 end-0 align-items-center position-absolute p-5"> not prodect in cart
+                <i class="fa-solid fs-2 ms-2 fa-cart-shopping" style="color: #43c6ac;"></i>
+            </h1>
+        </div>
+    </div>
+
+
+</ng-template>
+
+<app-footer></app-footer>

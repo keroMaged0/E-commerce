@@ -1,0 +1,85 @@
+
+
+
+  <nav class="navbar fixed-top navbar-expand-sm navbar-light bgLight  ">
+    <div class="container ">
+        <img width="15%" class="  " src="assets/cover.png" alt="">
+
+      <button class="navbar-toggler text-center d-lg-none"
+       type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+          aria-expanded="true" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse align-items-center " id="collapsibleNavId">
+       <div class=" m-auto">
+             <ul class="navbar-nav ms-5 ms-auto mt-2 mt-lg-0">
+             
+              <li *ngIf="isLogin"  class="nav-item">
+                  <a class="text-center nav-link darkColor  " routerLinkActive="bgGradient whiteColor rounded-3 fw-bold " routerLink="home">Home</a>
+              </li>
+             
+              <li *ngIf="isLogin"   class="text-center nav-item">
+                  <a  class="text-center nav-link darkColor " routerLinkActive="bgGradient whiteColor rounded-3 fw-bold " routerLink="categories">Categorise</a>
+              </li>
+         
+              <li  *ngIf="isLogin"  class="text-center nav-item">
+                  <a  class="text-center nav-link darkColor " routerLinkActive="bgGradient whiteColor rounded-3 fw-bold " routerLink="allorders">Orders</a>
+              </li>
+         
+              
+              <li *ngIf="isLogin"  class="text-center nav-item">
+                  <a class="text-center nav-link darkColor " routerLinkActive="bgGradient whiteColor rounded-3 fw-bold " routerLink="allbrand">Brands</a>
+              </li>
+                           
+          </ul>
+       </div>
+
+       <div class="curser align-items-center justify-content-center text-center m-auto d-flex me-4  align-items-center">
+          <ul class=" navbar-nav d-flex flex-row-reverse  mt-2 mt-lg-0">
+          <i *ngIf="!isLogin" class="curser text-center  fab fa-instagram mx-2"></i>
+          <i *ngIf="!isLogin" class="curser text-center  fab fa-facebook mx-2"></i>
+          <i *ngIf="!isLogin" class="curser text-center  fab fa-linkedin mx-2"></i>
+          <i *ngIf="!isLogin" class="curser text-center  fab fa-tiktok mx-2"></i>
+          <i *ngIf="!isLogin" class="curser text-center  fab fa-twitter mx-2"></i>
+          </ul>
+      </div>
+
+     
+         
+      <div class="curser align-items-center justify-content-center text-center  d-flex me-4  align-items-center">
+          
+          <ul class=" navbar-nav ">
+             
+              <li *ngIf="isLogin" class="text-center me-3  nav-item">
+                  <a class="p-3 position-relative  nav-link darkColor "  routerLinkActive="" routerLink="wishList" href="">
+                          <i class="fas fa-heart solid darkColor fa-2xl "></i>
+                  </a>
+              </li>
+              <li *ngIf="isLogin" class="text-center me-3  nav-item">
+                  <a class="p-3 position-relative  nav-link darkColor " routerLinkActive="" routerLink="cart">    
+                      <i class="fas fa-shopping-cart  darkColor fa-2xl "></i>
+                      <span class="bedge sall  bg-black mainColors   fw-bold position-absolute justify-content-center align-items-center d-flex numcart rounded-circle start-50 end-50 top- bottom-50  ">{{numberCart}}</span>
+                  </a>
+              </li>
+          </ul>
+
+          <ul class=" navbar-nav d-flex   mt-2 mt-lg-0">
+           
+              <li *ngIf="!isLogin" class=" text-center nav-item">
+                  <a class=" text-center nav-link darkColor fw-bold  " routerLinkActive="bgGradient whiteColor rounded-3 fw-bold" routerLink="logIn">Login</a>
+              </li>
+              <li *ngIf="!isLogin" class=" text-center nav-item">
+                  <a class=" text-center nav-link darkColor fw-bold " routerLinkActive="bgGradient whiteColor rounded-3 fw-bold" routerLink="register">Register</a>
+              </li>
+              <li *ngIf="isLogin"  class=" text-center nav-item">
+                  <a class=" text-center nav-link darkColor fw-bold curser" (click)="logout()"  routerLinkActive="bgGradient whiteColor rounded-3 fw-bold" >LogOut</a>
+              </li>
+             
+          </ul>
+      </div>
+      </div>
+</div>
+</nav>
+
+
+
